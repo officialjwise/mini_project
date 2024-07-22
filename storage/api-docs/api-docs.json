@@ -1,7 +1,7 @@
 {
     "openapi": "3.0.0",
     "info": {
-        "title": "AI-POWERED SAAS API DOCUMENTATION",
+        "title": "Mini Project Api Documentation ",
         "version": "1.0.0"
     },
     "paths": {
