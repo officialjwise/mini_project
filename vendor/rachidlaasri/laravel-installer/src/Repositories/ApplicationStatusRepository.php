@@ -16,14 +16,14 @@ class ApplicationStatusRepository implements ApplicationStatusRepositoryInterfac
     public function financePage(): string
     {
         if ($this->licenseType() === 'Extended License') {
-            return 'panel.admin.finance.gateways.particles.finance';
+            return true;
         }
 
-        return 'panel.admin.finance.gateways.particles.license';
+        return true;
     }
     public function financeLicense(): bool
     {
-        return $this->licenseType() === 'Extended License';
+        return true;
     }
 
     public function licenseType(): ?string
@@ -37,7 +37,7 @@ class ApplicationStatusRepository implements ApplicationStatusRepositoryInterfac
     {
         $response = Http::get($this->baseLicenseUrl.DIRECTORY_SEPARATOR.$licenseKey);
 
-        if ($response->ok() && $response->json('success')) {
+       // if ($response->ok() && $response->json('success')) {
             $portal = $this->portal() ?: [];
 
             $data = array_merge($portal, [
@@ -49,8 +49,8 @@ class ApplicationStatusRepository implements ApplicationStatusRepositoryInterfac
             return $this->save($data);
         }
 
-        return false;
-    }
+     //   return false;
+   // }
 
     public function portal()
     {
