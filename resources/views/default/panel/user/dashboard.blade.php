@@ -75,28 +75,8 @@
 @section('titlebar_title')
     {{ __('Welcome') }}, {{ auth()->user()->name }}.
 @endsection
-@section('titlebar_after')
-    <ul
-        class="lqd-filter-list mt-1 flex list-none flex-wrap items-center gap-x-4 gap-y-2 text-heading-foreground max-sm:gap-3"
-        x-data
-    >
-        @foreach ($titlebar_links as $link)
-            <li>
-                <x-button
-                    @class([
-                        'lqd-filter-btn inline-flex rounded-full px-2.5 py-0.5 text-2xs leading-tight transition-colors hover:translate-y-0 hover:bg-foreground/5 [&.active]:bg-foreground/5',
-                        'active' => $loop->first,
-                    ])
-                    variant="ghost"
-                    href="{{ $link['link'] }}"
-                    x-data
-                >
-                    @lang($link['label'])
-                </x-button>
-            </li>
-        @endforeach
-    </ul>
-@endsection
+
+
 
 @section('content')
     <div class="flex flex-wrap justify-between gap-8 py-5">
