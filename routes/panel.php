@@ -81,7 +81,7 @@ Route::group([
                 Route::post('/dash_notify_seen', [UserController::class, 'markDashNotifySeen'])->name('dash_notify_seen');
 
                 // premium support
-                Route::get('premium-support', PremiumSupportController::class)->name('premium-support');
+                // Route::get('premium-support', PremiumSupportController::class)->name('premium-support');
 
                 Route::prefix('api-keys')->name('apikeys.')->group(function () {
                     Route::get('/', [UserController::class, 'apiKeysList'])->name('index');
@@ -540,74 +540,74 @@ Route::group([
                         Route::get('/openai/test', [SettingsController::class, 'openaiTest'])->name('openai.test');
                         Route::post('/openai-save', [SettingsController::class, 'openaiSave']);
 
-                        Route::get('anthropic', [SettingsController::class, 'anthropic'])->name('anthropic');
-                        Route::get('anthropic/test', [SettingsController::class, 'anthropicTest'])->name('anthropic.test');
-                        Route::post('anthropic', [SettingsController::class, 'anthropicSave']);
+                        // Route::get('anthropic', [SettingsController::class, 'anthropic'])->name('anthropic');
+                        // Route::get('anthropic/test', [SettingsController::class, 'anthropicTest'])->name('anthropic.test');
+                        // Route::post('anthropic', [SettingsController::class, 'anthropicSave']);
 
-                        Route::get('gemini', [SettingsController::class, 'gemini'])->name('gemini');
-                        Route::get('gemini/test', [SettingsController::class, 'geminiTest'])->name('gemini.test');
-                        Route::post('gemini', [SettingsController::class, 'geminiSave']);
+                        // Route::get('gemini', [SettingsController::class, 'gemini'])->name('gemini');
+                        // Route::get('gemini/test', [SettingsController::class, 'geminiTest'])->name('gemini.test');
+                        // Route::post('gemini', [SettingsController::class, 'geminiSave']);
 
                         Route::get('/stablediffusion', [SettingsController::class, 'stablediffusion'])->name('stablediffusion');
                         Route::get('/stablediffusion/test', [SettingsController::class, 'stablediffusionTest'])->name('stablediffusion.test');
                         Route::post('/stablediffusion-save', [SettingsController::class, 'stablediffusionSave']);
 
-                        Route::get('/unsplashapi', [SettingsController::class, 'unsplashapi'])->name('unsplashapi');
-                        Route::get('/unsplashapi/test', [SettingsController::class, 'unsplashapiTest'])->name('unsplashapi.test');
-                        Route::post('/unsplashapi-save', [SettingsController::class, 'unsplashapiSave']);
+                        // Route::get('/unsplashapi', [SettingsController::class, 'unsplashapi'])->name('unsplashapi');
+                        // Route::get('/unsplashapi/test', [SettingsController::class, 'unsplashapiTest'])->name('unsplashapi.test');
+                        // Route::post('/unsplashapi-save', [SettingsController::class, 'unsplashapiSave']);
 
-                        Route::get('/pexelsapi', [SettingsController::class, 'pexelsapi'])->name('pexelsapi');
-                        Route::get('/pexelsapi/test', [SettingsController::class, 'pexelsapiTest'])->name('pexelsapi.test');
-                        Route::post('/pexelsapi-save', [SettingsController::class, 'pexelsapiSave']);
+                        // Route::get('/pexelsapi', [SettingsController::class, 'pexelsapi'])->name('pexelsapi');
+                        // Route::get('/pexelsapi/test', [SettingsController::class, 'pexelsapiTest'])->name('pexelsapi.test');
+                        // Route::post('/pexelsapi-save', [SettingsController::class, 'pexelsapiSave']);
 
-                        Route::get('/pixabayapi', [SettingsController::class, 'pixabayapi'])->name('pixabayapi');
-                        Route::get('/pixabayapi/test', [SettingsController::class, 'pixabayapiTest'])->name('pixabayapi.test');
-                        Route::post('/pixabayapi-save', [SettingsController::class, 'pixabayapiSave']);
+                        // Route::get('/pixabayapi', [SettingsController::class, 'pixabayapi'])->name('pixabayapi');
+                        // Route::get('/pixabayapi/test', [SettingsController::class, 'pixabayapiTest'])->name('pixabayapi.test');
+                        // Route::post('/pixabayapi-save', [SettingsController::class, 'pixabayapiSave']);
 
                         // thumbnail system
-                        Route::get('/thumbnail', [SettingsController::class, 'thumbnail'])->name('thumbnail');
-                        Route::post('/thumbnail-save', [SettingsController::class, 'thumbnailSave'])->name('thumbnail.save');
-                        Route::post('/thumbnail-purge', [SettingsController::class, 'thumbnailPurge'])->name('thumbnail.purge');
+                        // Route::get('/thumbnail', [SettingsController::class, 'thumbnail'])->name('thumbnail');
+                        // Route::post('/thumbnail-save', [SettingsController::class, 'thumbnailSave'])->name('thumbnail.save');
+                        // Route::post('/thumbnail-purge', [SettingsController::class, 'thumbnailPurge'])->name('thumbnail.purge');
 
-                        Route::get('/serperapi', [SettingsController::class, 'serperapi'])->name('serperapi');
-                        Route::get('/serperapi/test', [SettingsController::class, 'serperapiTest'])->name('serperapi.test');
-                        Route::post('/serperapi-save', [SettingsController::class, 'serperapiSave']);
+                        // Route::get('/serperapi', [SettingsController::class, 'serperapi'])->name('serperapi');
+                        // Route::get('/serperapi/test', [SettingsController::class, 'serperapiTest'])->name('serperapi.test');
+                        // Route::post('/serperapi-save', [SettingsController::class, 'serperapiSave']);
 
-                        Route::get('/clipdrop', [SettingsController::class, 'clipdrop'])->name('clipdrop');
-                        //					Route::get('/clipdrop/test', [SettingsController::class, 'clipdropTest'])->name('clipdrop.test');
-                        Route::post('/clipdrop-save', [SettingsController::class, 'clipdropSave']);
+                        // Route::get('/clipdrop', [SettingsController::class, 'clipdrop'])->name('clipdrop');
+                        // //					Route::get('/clipdrop/test', [SettingsController::class, 'clipdropTest'])->name('clipdrop.test');
+                        // Route::post('/clipdrop-save', [SettingsController::class, 'clipdropSave']);
 
                         Route::get('/tts', [SettingsController::class, 'tts'])->name('tts');
                         Route::post('/tts-save', [SettingsController::class, 'ttsSave']);
 
-                        Route::get('/synthesia', [SettingsController::class, 'synthesia'])->name('synthesia');
-                        Route::post('/synthesia-save', [SettingsController::class, 'synthesiaSave']);
+                        // Route::get('/synthesia', [SettingsController::class, 'synthesia'])->name('synthesia');
+                        // Route::post('/synthesia-save', [SettingsController::class, 'synthesiaSave']);
 
-                        Route::get('/invoice', [SettingsController::class, 'invoice'])->name('invoice');
-                        Route::post('/invoice-save', [SettingsController::class, 'invoiceSave']);
+                        // Route::get('/invoice', [SettingsController::class, 'invoice'])->name('invoice');
+                        // Route::post('/invoice-save', [SettingsController::class, 'invoiceSave']);
 
-                        Route::get('/payment', [SettingsController::class, 'payment'])->name('payment');
-                        Route::post('/payment-save', [SettingsController::class, 'paymentSave']);
+                        // Route::get('/payment', [SettingsController::class, 'payment'])->name('payment');
+                        // Route::post('/payment-save', [SettingsController::class, 'paymentSave']);
 
-                        Route::get('/affiliate', [SettingsController::class, 'affiliate'])->name('affiliate');
-                        Route::post('/affiliate-save', [SettingsController::class, 'affiliateSave']);
-                        Route::post('/affiliate-status-save/{id}', [SettingsController::class, 'affiliateStatusSave']);
+                        // Route::get('/affiliate', [SettingsController::class, 'affiliate'])->name('affiliate');
+                        // Route::post('/affiliate-save', [SettingsController::class, 'affiliateSave']);
+                        // Route::post('/affiliate-status-save/{id}', [SettingsController::class, 'affiliateStatusSave']);
 
                         Route::get('/smtp', [SettingsController::class, 'smtp'])->name('smtp');
                         Route::post('/smtp-save', [SettingsController::class, 'smtpSave']);
                         Route::post('/smtp-test', [SettingsController::class, 'smtpTest'])->name('smtp.test');
 
-                        Route::get('/gdpr', [SettingsController::class, 'gdpr'])->name('gdpr');
-                        Route::post('/gdpr-save', [SettingsController::class, 'gdprSave']);
+                        // Route::get('/gdpr', [SettingsController::class, 'gdpr'])->name('gdpr');
+                        // Route::post('/gdpr-save', [SettingsController::class, 'gdprSave']);
 
-                        Route::get('/privacy', [SettingsController::class, 'privacy'])->name('privacy');
-                        Route::post('/privacy-save', [SettingsController::class, 'privacySave']);
+                        // Route::get('/privacy', [SettingsController::class, 'privacy'])->name('privacy');
+                        // Route::post('/privacy-save', [SettingsController::class, 'privacySave']);
 
-                        Route::post('/get-privacy-terms-content', [SettingsController::class, 'getPrivacyTermsContent']);
-                        Route::post('/get-meta-content', [SettingsController::class, 'getMetaContent']);
+                        // Route::post('/get-privacy-terms-content', [SettingsController::class, 'getPrivacyTermsContent']);
+                        // Route::post('/get-meta-content', [SettingsController::class, 'getMetaContent']);
 
-                        Route::get('/storage', [SettingsController::class, 'storage'])->name('storage');
-                        Route::post('/storage-save', [SettingsController::class, 'storagesave']);
+                        // Route::get('/storage', [SettingsController::class, 'storage'])->name('storage');
+                        // Route::post('/storage-save', [SettingsController::class, 'storagesave']);
                     });
 
                     //Affiliates
@@ -617,13 +617,13 @@ Route::group([
                     });
 
                     //Coupons
-                    Route::prefix('coupons')->name('coupons.')->group(function () {
-                        Route::get('/', [AdminController::class, 'couponsList'])->name('index');
-                        Route::get('/used/{id}', [AdminController::class, 'couponsListUsed'])->name('used');
-                        Route::get('/delete/{id}', [AdminController::class, 'couponsDelete'])->name('delete');
-                        Route::post('/edit/{id}', [AdminController::class, 'couponsEdit'])->name('edit');
-                        Route::post('/add', [AdminController::class, 'couponsAdd'])->name('add');
-                    });
+                    // Route::prefix('coupons')->name('coupons.')->group(function () {
+                    //     Route::get('/', [AdminController::class, 'couponsList'])->name('index');
+                    //     Route::get('/used/{id}', [AdminController::class, 'couponsListUsed'])->name('used');
+                    //     Route::get('/delete/{id}', [AdminController::class, 'couponsDelete'])->name('delete');
+                    //     Route::post('/edit/{id}', [AdminController::class, 'couponsEdit'])->name('edit');
+                    //     Route::post('/add', [AdminController::class, 'couponsAdd'])->name('add');
+                    // });
 
                     //Frontend
                     Route::prefix('frontend')->name('frontend.')->group(function () {
@@ -687,7 +687,7 @@ Route::group([
                     Route::resource('advertis', AdvertisController::class)->parameter('advertis', 'advertis');
 
                     //Update
-                    Route::view('update', 'panel.admin.update.index')->name('update.index');
+                    // Route::view('update', 'panel.admin.update.index')->name('update.index');
 
                     //Healt Page
                     Route::prefix('health')
@@ -700,15 +700,15 @@ Route::group([
                         });
 
                     //Update license type
-                    Route::view('license', 'panel.admin.license.index')->name('license.index');
+                    // Route::view('license', 'panel.admin.license.index')->name('license.index');
 
                     Route::post('translations/auto/{lang}', [TranslateController::class, 'autoTranslate'])->name('translations.auto');
                 });
 
             //Coupons
-            Route::prefix('coupons')->name('coupons.')->group(function () {
-                Route::post('/validate-coupon', [AdminController::class, 'couponsValidate'])->name('validate');
-            });
+            // Route::prefix('coupons')->name('coupons.')->group(function () {
+            //     Route::post('/validate-coupon', [AdminController::class, 'couponsValidate'])->name('validate');
+            // });
 
             Route::post('change-chat-title', [AIChatController::class, 'changeChatTitle'])->name('change-chat-title');
 

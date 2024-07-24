@@ -62,7 +62,7 @@ class UserController extends Controller
 
         return view('panel.user.dashboard', compact('ongoingPayments', 'team')); //
     }
-
+//
     public function markTourSeen()
     {
         $user = Auth::user();

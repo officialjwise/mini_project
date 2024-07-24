@@ -3,6 +3,7 @@
 use App\Http\Middleware\MaintenanceMiddleware;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\IndexController;
+use App\Http\Controllers\UserController;
 use App\Http\Controllers\InstallationController;
 use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
 use App\Http\Controllers\MailController;
@@ -19,7 +20,7 @@ use App\Http\Controllers\Common\SitemapController;
 Route::get('/test', [TestController::class, 'test']);
 
 Route::group(['prefix' => LaravelLocalization::setLocale(), 'middleware' => [ 'checkInstallation', 'localeSessionRedirect', 'localizationRedirect', 'localeViewPath' ]], function() {
-    Route::get('/', [IndexController::class, 'index'])
+    Route::get('/', [UserController::class, 'redirect'])
         ->name('index');
     
     Route::get('/privacy-policy', [PageController::class, 'pagePrivacy']);

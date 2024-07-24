@@ -80,7 +80,7 @@
                     $isAdmin = \Auth::user()?->isAdmin();
 
                 @endphp
-
+                
                 @foreach ($items as $item)
                     @if (data_get($item, 'is_admin'))
                         @if ($isAdmin)
@@ -116,7 +116,7 @@
                     </x-navbar.item> --}}
 
                     @if ($app_is_not_demo && setting('premium_support', true))
-                        <x-navbar.item>
+                        <!-- <x-navbar.item>
                             <x-navbar.link
                                 label="{{ __('Premium Support') }}"
                                 href="#"
@@ -124,10 +124,10 @@
                                 trigger-type="modal"
                             >
                                 <x-slot:modal>
-                                    @includeIf('premium-support.index')
+                                    
                                 </x-slot:modal>
                             </x-navbar.link>
-                        </x-navbar.item>
+                        </x-navbar.item> -->
                     @endif
                 @endif
 

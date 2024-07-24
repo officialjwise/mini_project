@@ -38,20 +38,7 @@
         </div>
     </div>
 @else
-    <h3 class="mb-8">
-        @lang('Your Plan')
-    </h3>
-
-    <p class="mb-3 font-medium leading-relaxed text-heading-foreground/60">
-        @if (Auth::user()->activePlan() != null)
-            {{ __('You have currently') }}
-            <strong class="text-heading-foreground">{{ getSubscriptionName() }}</strong>
-            {{ __('plan.') }}
-            {{ __('Will refill automatically in') }} {{ getSubscriptionDaysLeft() }} {{ __('Days.') }}
-            {{ checkIfTrial() == true ? __('You are in Trial time.') : '' }}
-        @else
-            {{ __('You have no subscription at the moment. Please select a subscription plan or a token pack.') }}
-        @endif
+    
 
         @if ($setting->feature_ai_image)
             {{ __('Total') }}
