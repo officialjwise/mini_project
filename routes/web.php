@@ -20,7 +20,7 @@ use App\Http\Controllers\Common\SitemapController;
 Route::get('/test', [TestController::class, 'test']);
 
 Route::group(['prefix' => LaravelLocalization::setLocale(), 'middleware' => [ 'checkInstallation', 'localeSessionRedirect', 'localizationRedirect', 'localeViewPath' ]], function() {
-    Route::get('/', [UserController::class, 'index'])
+    Route::get('/', [Dashboard.UserController::class, 'index'])
         ->name('index');
         
     // Route::get('/',  function () {
