@@ -41,191 +41,24 @@
         @endif
 
         <div class="flex flex-col gap-11">
-            <x-card
-                class="overflow-hidden px-2 py-4 hover:-translate-y-1 hover:bg-foreground/5"
-                variant="outline"
-                size="lg"
-            >
-                <div class="relative z-1 w-full lg:w-1/2">
-                    <h2 class="mb-2.5">
-                        @lang('Marketplace is here.')
-                    </h2>
-                    <p class="mb-0 text-sm">
-                        @lang('Extend the capabilities of MagicAI, explore new designs and unlock new horizons.')
-                    </p>
-                </div>
-                <figure
-                    class="absolute end-0 top-full max-w-md max-lg:-translate-y-16 lg:-end-24 lg:-top-16"
-                    aria-hidden="true"
-                >
-                    <img
-                        class="w-full"
-                        alt="{{ __('marketplace') }}"
-                        width="857"
-                        height="470"
-                        src="{{ custom_theme_url('/assets/img/misc/dash-marketplace-announce.png') }}"
-                    >
-                </figure>
-                <a
-                    class="absolute inset-0 z-1 inline-block overflow-hidden text-start -indent-96"
-                    href="{{ route('dashboard.admin.marketplace.index') }}"
-                >
-                    {{ __('Explore Marketplace') }}
-                </a>
-            </x-card>
+            
 
-            <div class="grid grid-cols-1 gap-5 md:grid-cols-2 lg:gap-8 xl:grid-cols-4">
-                <x-card
-                    class="lqd-statistic-card w-full"
-                    size="sm"
-                >
-                    @php
-                        $sales_change = percentageChange($sales_prev_week, $sales_this_week);
-                    @endphp
-                    <div class="flex gap-4">
-                        <x-lqd-icon
-                            class="bg-background text-heading-foreground dark:bg-foreground/5"
-                            size="xl"
-                        >
-                            <x-tabler-currency-dollar
-                                class="size-6"
-                                stroke-width="1.5"
-                            />
-                        </x-lqd-icon>
-                        <div class="lqd-statistic-info grow">
-                            <p class="lqd-statistic-title mb-1 text-2xs font-medium text-heading-foreground/50">
-                                {{ __('Total Sales') }}
-                            </p>
-                            <h3 class="lqd-statistic-change m-0 flex items-center gap-2 text-xl">
-                                @if (currencyShouldDisplayOnRight($currencySymbol))
-                                    {{ number_format(cache('total_sales')) }} {{ $currencySymbol }}
-                                @else
-                                    {{ $currencySymbol }}{{ number_format(cache('total_sales')) }}
-                                @endif
-                                <x-change-indicator value="{{ floatval($sales_change) }}" />
-                            </h3>
-                        </div>
-                    </div>
-                </x-card>
-
-                <x-card
-                    class="lqd-statistic-card w-full"
-                    size="sm"
-                >
-                    @php
-                        $users_change = percentageChange(cache('users_previous_week'), cache('users_this_week'));
-                    @endphp
-                    <div class="flex gap-4">
-                        <x-lqd-icon
-                            class="bg-background text-heading-foreground dark:bg-foreground/5"
-                            size="xl"
-                        >
-                            <x-tabler-user-plus
-                                class="size-6"
-                                stroke-width="1.5"
-                            />
-                        </x-lqd-icon>
-                        <div class="lqd-statistic-info grow">
-                            <p class="lqd-statistic-title mb-1 text-2xs font-medium text-heading-foreground/50">
-                                {{ __('Total Users') }}
-                            </p>
-                            <h3 class="lqd-statistic-change m-0 flex items-center gap-2 text-xl">
-                                {{ cache('total_users') }}
-                                {{-- <x-change-indicator value="{{ floatval($users_change) }}" /> --}}
-                            </h3>
-                        </div>
-                    </div>
-                </x-card>
-
-                <x-card
-                    class="lqd-statistic-card w-full"
-                    size="sm"
-                >
-                    @php
-                        $generated_change = percentageChange(cache('words_previous_week'), cache('words_this_week'));
-                    @endphp
-                    <div class="flex gap-4">
-                        <x-lqd-icon
-                            class="bg-background text-heading-foreground dark:bg-foreground/5"
-                            size="xl"
-                        >
-                            <x-tabler-pencil
-                                class="size-6"
-                                stroke-width="1.5"
-                            />
-                        </x-lqd-icon>
-                        <div class="lqd-statistic-info grow">
-                            <p class="lqd-statistic-title mb-1 text-2xs font-medium text-heading-foreground/50">
-                                {{ __('Words Generated') }}
-                            </p>
-                            <h3 class="lqd-statistic-change m-0 flex items-center gap-2 text-xl">
-                                {{ cache('words_this_week') }}
-                                <x-change-indicator value="{{ floatval($generated_change) }}" />
-                            </h3>
-                        </div>
-                    </div>
-                </x-card>
-
-                <x-card
-                    class="lqd-statistic-card w-full"
-                    size="sm"
-                >
-                    @php
-                        $generated_change = percentageChange(cache('images_previous_week'), cache('images_this_week'));
-                    @endphp
-                    <div class="flex gap-4">
-                        <x-lqd-icon
-                            class="bg-background text-heading-foreground dark:bg-foreground/5"
-                            size="xl"
-                        >
-                            <x-tabler-camera
-                                class="size-6"
-                                stroke-width="1.5"
-                            />
-                        </x-lqd-icon>
-                        <div class="lqd-statistic-info grow">
-                            <p class="lqd-statistic-title mb-1 text-2xs font-medium text-heading-foreground/50">
-                                {{ __('Images Generated') }}
-                            </p>
-                            <h3 class="lqd-statistic-change m-0 flex items-center gap-2 text-xl">
-                                {{ cache('images_this_week') }}
-                                <x-change-indicator value="{{ floatval($generated_change) }}" />
-
-                            </h3>
-                        </div>
-                    </div>
-                </x-card>
-            </div>
+            
 
             <div class="grid grid-cols-1 gap-11 md:grid-cols-2">
-                <x-card>
-                    @php
-                        if ($sales_prev_week != 0 && $sales_this_week != 0) {
-                            $sales_percent = number_format((1 - $sales_prev_week / $sales_this_week) * 100);
-                        } else {
-                            $sales_percent = 0;
-                        }
-                    @endphp
+            <x-card
+                    class="flex flex-col"
+                    class:body="flex flex-col justify-center grow"
+                >
                     <x-slot:head>
                         <h4 class="m-0 text-base font-medium">
-                            {{ __('Revenue') }}
+                            {{ __('New Users') }}
                         </h4>
                     </x-slot:head>
-                    <p class="mb-1">
-                        {{ __('Total Sales') }}
-                    </p>
-                    <h3 class="flex items-center gap-2">
-                        @if (currencyShouldDisplayOnRight($currencySymbol))
-                            {{ number_format(cache('total_sales')) }}{{ $currencySymbol }}
-                        @else
-                            {{ $currencySymbol }}{{ number_format(cache('total_sales')) }}
-                        @endif
-                        <x-change-indicator value="{{ floatval($sales_percent) }}" />
-                    </h3>
 
                     <div
-                        class="[&_.apexcharts-legend-text]:!text-foreground"
-                        id="chart-daily-sales"
+                        class="min-h-[350px] w-full [&_.apexcharts-legend-text]:!m-0 [&_.apexcharts-legend-text]:!pe-2 [&_.apexcharts-legend-text]:ps-2 [&_.apexcharts-legend-text]:!text-foreground"
+                        id="new-users-chart"
                     ></div>
                 </x-card>
 
@@ -259,37 +92,9 @@
                     </div>
                 </x-card>
 
-                <x-card
-                    class="flex flex-col"
-                    class:body="flex flex-col justify-center grow"
-                >
-                    <x-slot:head>
-                        <h4 class="m-0 text-base font-medium">
-                            {{ __('Popular Plans') }}
-                        </h4>
-                    </x-slot:head>
+                
 
-                    <div
-                        class="min-h-[350px] w-full [&_.apexcharts-legend-text]:!m-0 [&_.apexcharts-legend-text]:!pe-2 [&_.apexcharts-legend-text]:ps-2 [&_.apexcharts-legend-text]:!text-foreground"
-                        id="popular-plans-chart"
-                    ></div>
-                </x-card>
-
-                <x-card
-                    class="flex flex-col"
-                    class:body="flex flex-col justify-center grow"
-                >
-                    <x-slot:head>
-                        <h4 class="m-0 text-base font-medium">
-                            {{ __('New Users') }}
-                        </h4>
-                    </x-slot:head>
-
-                    <div
-                        class="min-h-[350px] w-full [&_.apexcharts-legend-text]:!m-0 [&_.apexcharts-legend-text]:!pe-2 [&_.apexcharts-legend-text]:ps-2 [&_.apexcharts-legend-text]:!text-foreground"
-                        id="new-users-chart"
-                    ></div>
-                </x-card>
+                
 
                 <x-card
                     class="flex flex-col"

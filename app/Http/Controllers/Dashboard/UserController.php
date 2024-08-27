@@ -60,6 +60,8 @@ class UserController extends Controller
         $tmp = PaymentProcessController::checkUnmatchingSubscriptions();
         $team = $this->getTeam(Auth::user());
 
+    
+
         return view('panel.user.dashboard', compact('ongoingPayments', 'team')); //
     }
 //

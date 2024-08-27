@@ -706,9 +706,9 @@ Route::group([
                 });
 
             //Coupons
-            // Route::prefix('coupons')->name('coupons.')->group(function () {
-            //     Route::post('/validate-coupon', [AdminController::class, 'couponsValidate'])->name('validate');
-            // });
+            Route::prefix('coupons')->name('coupons.')->group(function () {
+                Route::post('/validate-coupon', [AdminController::class, 'couponsValidate'])->name('validate');
+            });
 
             Route::post('change-chat-title', [AIChatController::class, 'changeChatTitle'])->name('change-chat-title');
 
