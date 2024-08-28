@@ -586,8 +586,8 @@ Route::group([
                         // Route::get('/invoice', [SettingsController::class, 'invoice'])->name('invoice');
                         // Route::post('/invoice-save', [SettingsController::class, 'invoiceSave']);
 
-                        // Route::get('/payment', [SettingsController::class, 'payment'])->name('payment');
-                        // Route::post('/payment-save', [SettingsController::class, 'paymentSave']);
+                        Route::get('/payment', [SettingsController::class, 'payment'])->name('payment');
+                        Route::post('/payment-save', [SettingsController::class, 'paymentSave']);
 
                         // Route::get('/affiliate', [SettingsController::class, 'affiliate'])->name('affiliate');
                         // Route::post('/affiliate-save', [SettingsController::class, 'affiliateSave']);
