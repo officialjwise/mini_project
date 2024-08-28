@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AdsController;
 use App\Http\Controllers\AdvertisController;
+use App\Http\Controllers\ai_social_media_extension\AiSocialMediaExtensionController;
 use App\Http\Controllers\AIArticleWizardController;
 use App\Http\Controllers\AiChatbotModelController;
 use App\Http\Controllers\AIChatController;
