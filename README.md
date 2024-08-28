@@ -88,7 +88,8 @@ This README provides detailed instructions on how to set up, configure, and acce
 ## Screenshots 📸
 
 ### Dashboard View
-![Screenshot](https://drive.google.com/uc?export=view&id=1B_u2s8mbwM3USlKxyHFKVUq4gSGS1OKL)
+![Alt text](https://drive.google.com/uc?export=view&id=1B_u2s8mbwM3USlKxyHFKVUq4gSGS1OKL)
+
 
 
 ## REST API Setup 🛠️
