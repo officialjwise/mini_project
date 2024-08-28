@@ -1,4 +1,4 @@
-# GeniusAI 🚀
+# ✨ GeniusAI AI-Powered Content Generation and Analysis Platform 🚀
 
 Welcome to GeniusAI, an advanced AI-powered Software as a Service (SaaS) platform designed to revolutionize business operations through cutting-edge automation and intelligent solutions. This guide provides comprehensive instructions on how to install and set up GeniusAI.
 
