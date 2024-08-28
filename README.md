@@ -85,12 +85,6 @@ For more detailed instructions, refer to the following guides: [Plesk](https://p
 
 This README provides detailed instructions on how to set up, configure, and access the RESTful APIs for GeniusAI, including OAuth2 Passport authentication and API documentation generation.
 
-## Screenshots 📸
-
-### Dashboard View
-![Alt text](https://drive.google.com/uc?export=view&id=1B_u2s8mbwM3USlKxyHFKVUq4gSGS1OKL)
-
-
 
 ## REST API Setup 🛠️
 
